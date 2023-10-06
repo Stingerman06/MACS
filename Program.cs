@@ -119,7 +119,7 @@ INCORRECTDIRECTORY:
     missingFolders = 0;
     if (userInput[2] == null || userInput[2] == "")
     {
-        userInput[2] = AppDomain.CurrentDomain.BaseDirectory + "Input\\";
+        userInput[2] = AppDomain.CurrentDomain.BaseDirectory + "Input\\btl\\";
     }
     else
     {
@@ -131,9 +131,9 @@ INCORRECTDIRECTORY:
         {
             for (int i = 0; i < vanillaEverythingFights.Length; i++)
             {
-                if (!Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaEverythingFights[i] + "\\"))
+                if (!Directory.Exists(userInput[2] + vanillaEverythingFights[i] + "\\"))
                 {
-                    missingFolderPaths[missingFolders] = AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaEverythingFights[i] + "\\";
+                    missingFolderPaths[missingFolders] = userInput[2] + vanillaEverythingFights[i] + "\\";
                     missingFolders++;
                 }
             }
@@ -157,9 +157,9 @@ INCORRECTDIRECTORY:
             missingFolders = 0;
             for (int i = 0; i < vanillaEverythingFights.Length; i++)
             {
-                if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin"))
+                if (!File.Exists(userInput[2] + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin"))
                 {
-                    missingFolderPaths[missingFolders] = AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin";
+                    missingFolderPaths[missingFolders] = userInput[2] + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin";
                     missingFolders++;
                 }
             }
@@ -248,7 +248,7 @@ for (int phat = 0; phat < 2; phat++)
                 {
                     Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledRegularFights[i] + "\\");
                 }
-                fileStreamOriginal1 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaRegularFights[i] + "\\" + vanillaRegularFights[i] + ".bin", FileMode.Open, FileAccess.Read);
+                fileStreamOriginal1 = new FileStream(userInput[2] + vanillaRegularFights[i] + "\\" + vanillaRegularFights[i] + ".bin", FileMode.Open, FileAccess.Read);
                 fileStreamNew1 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledRegularFights[i] + "\\" + shuffledRegularFights[i] + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fileStreamOriginal1.CopyTo(fileStreamNew1);
                 fileStreamOriginal1.Dispose();
@@ -347,7 +347,7 @@ for (int phat = 0; phat < 2; phat++)
                 {
                     Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledSpecialFights[i] + "\\");
                 }
-                fileStreamOriginal2 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaSpecialFights[i] + "\\" + vanillaSpecialFights[i] + ".bin", FileMode.Open, FileAccess.Read);
+                fileStreamOriginal2 = new FileStream(userInput[2] + vanillaSpecialFights[i] + "\\" + vanillaSpecialFights[i] + ".bin", FileMode.Open, FileAccess.Read);
                 fileStreamNew2 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledSpecialFights[i] + "\\" + shuffledSpecialFights[i] + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fileStreamOriginal2.CopyTo(fileStreamNew2);
                 fileStreamOriginal2.Dispose();
@@ -459,7 +459,7 @@ for (int phat = 0; phat < 2; phat++)
                 {
                     Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledCreatureFights[i] + "\\");
                 }
-                fileStreamOriginal3 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaCreatureFights[i] + "\\" + vanillaCreatureFights[i] + ".bin", FileMode.Open, FileAccess.Read);
+                fileStreamOriginal3 = new FileStream(userInput[2] + vanillaCreatureFights[i] + "\\" + vanillaCreatureFights[i] + ".bin", FileMode.Open, FileAccess.Read);
                 fileStreamNew3 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledCreatureFights[i] + "\\" + shuffledCreatureFights[i] + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fileStreamOriginal3.CopyTo(fileStreamNew3);
                 fileStreamOriginal3.Dispose();
@@ -558,7 +558,7 @@ for (int phat = 0; phat < 2; phat++)
                 {
                     Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledDarkAeonFights[i] + "\\");
                 }
-                fileStreamOriginal4 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaDarkAeonFights[i] + "\\" + vanillaDarkAeonFights[i] + ".bin", FileMode.Open, FileAccess.Read);
+                fileStreamOriginal4 = new FileStream(userInput[2] + vanillaDarkAeonFights[i] + "\\" + vanillaDarkAeonFights[i] + ".bin", FileMode.Open, FileAccess.Read);
                 fileStreamNew4 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledDarkAeonFights[i] + "\\" + shuffledDarkAeonFights[i] + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fileStreamOriginal4.CopyTo(fileStreamNew4);
                 fileStreamOriginal4.Dispose();
@@ -676,7 +676,7 @@ for (int phat = 0; phat < 2; phat++)
                 {
                     Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledEverythingFights[i] + "\\");
                 }
-                fileStreamOriginal5 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Input\\" + baseFolderPath + "\\" + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin", FileMode.Open, FileAccess.Read);
+                fileStreamOriginal5 = new FileStream(userInput[2] + vanillaEverythingFights[i] + "\\" + vanillaEverythingFights[i] + ".bin", FileMode.Open, FileAccess.Read);
                 fileStreamNew5 = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "\\Output\\" + baseFolderPath + "\\" + shuffledEverythingFights[i] + "\\" + shuffledEverythingFights[i] + ".bin", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fileStreamOriginal5.CopyTo(fileStreamNew5);
                 fileStreamOriginal5.Dispose();
